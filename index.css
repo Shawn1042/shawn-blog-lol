@@ -191,3 +191,38 @@ hr{
     color: crimson;
 }
 
+
+
+
+/* actual blogs section */
+#blogs-from-shawn{
+    padding: 40px;
+    margin: 25px;
+}
+
+#blogs-from-shawn > #blog > .p-style{
+    color: #2aa198;
+}
+
+
+#blogs-from-shawn > h1{
+    text-align: center;
+    color: #2aa198;
+}
+
+#blogs-from-shawn > #blog > h1{
+    color: rgba(7, 244, 161, 0.5);
+}
+
+#blogs-from-shawn > hr{
+    width: 60%;
+    text-align: center;
+    margin: auto;
+}
+
+@media only screen and (max-width: 650px){
+    #blogs-from-shawn {
+        padding: 10px;
+        margin: 15px;
+    }
+}
