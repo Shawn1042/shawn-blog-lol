@@ -1,0 +1,74 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400&family=Press+Start+2P&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+body {
+    background-color: black;
+    font-family: "Pixel NES";
+    color: white;
+}
+
+/* header */
+
+header{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 20px;
+}
+
+.press-start {
+    font-family: "Press Start 2P", system-ui;
+    font-weight: 400;
+    font-style: normal;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+    animation: blink 1s infinite;
+}
+
+h1 {
+    color: rgb(144, 143, 143);
+    padding: 10px;
+    font-size: 4rem;
+}
+
+hr{
+    width: 100%;
+    border: 2px solid rgb(33, 32, 32);
+    animation: blink 1s 5;
+}
+
+/* blinking animation */
+@keyframes blink {
+    0% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.5;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+
+
+/* scrollbar  */
+
+::-webkit-scrollbar {
+    width: 1em;
+}
+
+::-webkit-scrollbar-track {
+    background-color: black;
+}
+
+::-webkit-scrollbar-thumb {
+    border: 1px solid #1b3548;
+    background-color: black;
+}

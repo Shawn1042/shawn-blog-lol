@@ -1,0 +1,15 @@
+{
+	"folders": [
+		{
+			"name": "shawncodingblog",
+			"path": ".."
+		},
+		{
+			"name": "Pixel_NES",
+			"path": "../../Downloads/pixel_nes (2)/Pixel_NES"
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "Pixel_NES"
+	}
+}
