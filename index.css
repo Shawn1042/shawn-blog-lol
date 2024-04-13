@@ -13,6 +13,9 @@
     --secondary-color: #126dae;
     --best-font:  font-family: "MS Gothic", Tahoma, sans-serif;
 }
+span{
+    color: #2aa198;
+}
 
 body {
     background-color: black;
@@ -148,7 +151,7 @@ hr{
 
 .boxes > .card{
     width: 325px;
-    height: 375px;
+    height: 385px;
     border: 3px solid #161719;
     border-radius: 8px;
     overflow: hidden;
@@ -165,7 +168,7 @@ hr{
     padding: 16px;
 }
 
-.boxes > .card > .card-content > h3{
+.boxes > .card > .card-content > h2{
     font-family: sans-serif;
     font-size: 28px;
     margin-bottom: 8px;
@@ -181,8 +184,10 @@ hr{
 
 .boxes > .card > .card-content > .card-btn{
     margin-top: 140px;
-    background-color:#4a4e51;
-    color: rgb(232, 226, 226);
+    margin-bottom: 20px;
+    background-color:transparent;
+    color: white;
+    border: 1px solid #1b3548;
     border-radius: 2px;
     padding: 7px 10px;
 }
@@ -225,4 +230,21 @@ hr{
         padding: 10px;
         margin: 15px;
     }
+}
+
+
+
+
+/* footer section */
+footer{
+    padding: 25px;
+    text-align: center;
+}
+
+footer > p{
+    font-family: "MS Gothic", Tahoma, sans-serif;
+}
+
+footer > p > span{
+    color: #126dae;
 }
