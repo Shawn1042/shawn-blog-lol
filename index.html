@@ -3,12 +3,13 @@
 <head>
     <link rel="icon" type="image/x-icon" href="/assets/S-logo.png" />
     <title>Shawn Blog</title>
-    <meta name="description" content="Explore insightful articles, tips, and stories on our blog site. Discover engaging content on a variety of topics to enrich your knowledge and inspire your journey.">
+    <meta name="theme-color" content="#000000">
+    <meta name="description" content="Discover some of Shawn's projects and insightful blog posts. Explore a variety of topics to inspire and enrich your journey!">
     <meta name="keywords" content="blog, articles, stories, tips, knowledge, inspiration">
     <meta name="author" content="shawn">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="UTF-8">
-
+    <link rel="manifest" href="/manifest.json">
     <link rel="stylesheet" href="index.css">
 </head>
 <body>
@@ -112,11 +113,26 @@
       <p>Please be kind everyday!</p>
     </footer>
 
-    
+
     <script src="index.js"></script>
     <script>
       var audio = document.getElementById("mars");
       audio.volume = 0.1;
   </script>
+
+<script>
+  if ('serviceWorker' in navigator) {
+    window.addEventListener('load', () => {
+      navigator.serviceWorker.register('serviceworker.js')
+        .then(registration => {
+          console.log('Service Worker registered with scope:', registration.scope);
+        })
+        .catch(error => {
+          console.error('Service Worker registration failed:', error);
+        });
+    });
+  }
+</script>
+
 </body>
 </html>

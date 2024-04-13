@@ -1,0 +1,37 @@
+{
+    "short_name": "Shawn Blog",
+    "name": "Shawn's Blog",
+    "icons": [
+        {
+            "src": "assets/Webp.net-resizeimage.png",
+            "type": "image/png",
+            "sizes": "530x530",
+            "purpose": "any maskable"
+        },
+        {
+            "src": "assets/rsz_webp.net-resizeimage.png",
+            "type": "image/png",
+            "sizes": "assets/rsz_webpnet-resizeimage (1).png",
+            "purpose": "any"
+        }
+    ],
+    "start_url": "/index.html",
+    "background_color": "#000000",
+    "display": "standalone",
+    "scope": "/",
+    "theme_color": "#000000",
+    "orientation": "portrait-primary",
+    "description": "Discover Shawn's projects and insightful blog posts. Explore a variety of topics to inspire and enrich your journey",
+    "lang": "en-US",
+    "dir": "ltr",
+    "categories": [
+        "entertainment"
+    ],
+    "screenshots": [
+        {
+            "src": "assets/rsz_screenshot_478.png",
+            "type": "image/png",
+            "sizes": "640x360"
+        }
+    ]
+}
