@@ -248,3 +248,25 @@ footer > p{
 footer > p > span{
     color: #126dae;
 }
+
+
+/* blog titles */
+
+.blog-title{
+    padding: 5px;
+    margin: 20px;
+}
+
+.blog-title > a > h2{
+    font-family: "Press Start 2P", system-ui;
+    font-weight: 400;
+    font-style: normal;
+    text-decoration: none;
+    color: #2aa198;
+}
+
+.blog-title > p{
+    font-family: "MS Gothic", Tahoma, sans-serif;
+    color: rgba(7, 244, 161, 0.5);
+
+}
