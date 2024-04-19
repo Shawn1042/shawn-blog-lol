@@ -17,5 +17,116 @@
         <hr>
     </header>
     
+    <div id="blog">
+        <h1>How to make your website a PWA (Progressive Web App)</h1>
+        <span><p>Page created on April 18, 2024</p></span>
+
+        <p>About a month ago, I worked on a project for a nonprofit. My task? Build a website that can also be downloaded as an app! </p>
+        <p>I had no idea how to do this, so I searched "how to install a frontend website application". The first answer? "Progressive Web App" (PWA). I'd never heard of a PWA, <br> so I watched a video on Fireship's YouTube channel for context.</p>
+        <p>I did some more research using Stack Overflow and practiced with a small single web application. I learned about Lighthouse, where the browser gives feedback on performance, accessibility, best practices, and SEO. It's awesome!</p>
+        <p>Then, there's a link that says "PWA". This will tell you what you need to turn your website into a PWA! (We're about to go through some code for this, so don't worry!)</p>
+        
+        <p>Enough of me talking, lets get to coding up a PWA! I'm going to teach you how to turn <br>
+        your website into a PWA that can be installed on Android, iPhones, and computers as well :). For Example <br>
+        <a href="">My Blog Website</a> is a PWA!</p>
+
+        <div class="combine">
+            <h1>Step 1: Performance</h1>
+            <img src="/assets/performanceimage.png" alt="performance from PWA" title="performance from PWA" loading="lazy">
+        </div>
+
+       <h2>Maintaining performance within the range of 80-100 for a Progressive Web App (PWA) is crucial for several reasons:</h2> 
+
+        <p>A PWA's performance directly impacts user experience. Studies show that users tend to abandon websites or apps that are slow to load or respond. By keeping performance high, PWAs ensure smooth and responsive interactions, leading to higher user engagement and retention.</p>
+       
+
+
+        <pre class="code-block">
+            <code>
+              // <span class="keyword">Service</span> worker registration <br>
+              <span class="keyword">if</span> (<span class="constant">'serviceWorker'</span> in <span class="variable">navigator</span>) {
+                <span class="variable">window</span>.<span class="function">addEventListener</span>('load', async () => {
+                  <span class="keyword">try</span> {
+                    <span class="keyword">const</span> <span class="variable">registration</span> = <span class="keyword">await</span> <span class="variable">navigator</span>.<span class="property">serviceWorker</span>.<span class="function">register</span>('/service-worker.js');
+                    <span class="variable">console</span>.<span class="property">log</span>('Service Worker registered with scope:', <span class="variable">registration</span>.<span class="property">scope</span>);
+                  } <span class="keyword">catch</span> (<span class="variable">err</span>) {
+                    <span class="variable">console</span>.<span class="property">error</span>('Service Worker registration failed:', <span class="variable">err</span>);
+                  }
+                });
+              }
+          
+              // Cache assets for offline use
+              <br>
+              <span class="keyword">const</span> <span class="variable">cacheName</span> = <span class="string">'my-pwa-cache-v1'</span>;
+              <span class="keyword">const</span> urlsToCache = [
+                <span class="string">'/'</span>,
+                <span class="string">'/styles/main.css'</span>,
+                <span class="string">'/scripts/main.js'</span>,
+                <span class="string">'/images/logo.png'</span>
+              ];
+          
+              <span class="variable">self</span>.<span class="function">addEventListener</span>('install', <span class="keyword">event</span> => {
+                <span class="keyword">event</span>.<span class="function">waitUntil</span>(
+                  <span class="variable">caches</span>.<span class="function">open</span>(<span class="variable">cacheName</span>)
+                    .<span class="function">then</span>(<span class="variable">cache</span> => <span class="variable">cache</span>.<span class="function">addAll</span>(urlsToCache))
+                    .<span class="function">catch</span>(<span class="variable">err</span> => <span class="variable">console</span>.<span class="property">error</span>('Cache addAll error:', <span class="variable">err</span>))
+                );
+              });
+          
+              <span class="variable">self</span>.<span class="function">addEventListener</span>('fetch', <span class="keyword">event</span> => {
+                <span class="keyword">event</span>.<span class="function">respondWith</span>(
+                  <span class="variable">caches</span>.<span class="function">match</span>(<span class="keyword">event</span>.<span class="property">request</span>)
+                    .<span class="function">then</span>(<span class="variable">response</span> => {
+                      <span class="keyword">if</span> (<span class="variable">response</span>) {
+                        <span class="keyword">return</span> <span class="variable">response</span>;
+                      }
+                      <span class="keyword">return</span> <span class="variable">fetch</span>(<span class="keyword">event</span>.<span class="property">request</span>);
+                    })
+                    .<span class="function">catch</span>(<span class="variable">err</span> => <span class="variable">console</span>.<span class="property">error</span>('Fetch error:', <span class="variable">err</span>))
+                );
+              });
+          
+              // Optimize image loading
+              <br>
+              <span class="variable">document</span>.<span class="function">addEventListener</span>('DOMContentLoaded', () => {
+                <span class="keyword">const</span> <span class="variable">images</span> = <span class="variable">document</span>.<span class="function">querySelectorAll</span>('img[data-src]');
+                <span class="variable">images</span>.<span class="function">forEach</span>(<span class="variable">img</span> => {
+                  <span class="variable">img</span>.<span class="property">src</span> = <span class="variable">img</span>.<span class="property">dataset</span>.<span class="property">src</span>;
+                  <span class="variable">img</span>.<span class="function">onload</span> = () => {
+                    <span class="variable">img</span>.<span class="function">removeAttribute</span>('data-src');
+                  };
+                });
+              });
+          
+              // Lazy load resources
+              <br>
+              <span class="variable">document</span>.<span class="function">addEventListener</span>('scroll', () => {
+                <span class="keyword">const</span> <span class="variable">lazyLoadElements</span> = <span class="variable">document</span>.<span class="function">querySelectorAll</span>('.lazy-load');
+                <span class="variable">lazyLoadElements</span>.<span class="function">forEach</span>(<span class="variable">element</span> => {
+                  <span class="keyword">if</span> (<span class="variable">element</span>.<span class="function">getBoundingClientRect</span>().<span class="property">top</span> &lt; <span class="variable">window</span>.<span class="property">innerHeight</span>) {
+                    <span class="variable">element</span>.<span class="property">src</span> = <span class="variable">element</span>.<span class="property">dataset</span>.<span class="property">src</span>;
+                    <span class="variable">element</span>.<span class="function">classList</span>.<span class="function">remove</span>('lazy-load');
+                  }
+                });
+              });
+          
+              // Minimize JavaScript and CSS files
+              // Use tools like Webpack, Babel, and CSS minifiers to bundle and minimize your files for faster loading.
+          
+              // Monitor performance
+              // Use tools like Lighthouse, WebPageTest, or Chrome DevTools to analyze and improve your PWA's performance.
+            </code>
+          </pre>
+          
+
+
+
+
+
+
+    </div>
+
+    
+    <script src="PWA.js"></script>
 </body>
 </html>
