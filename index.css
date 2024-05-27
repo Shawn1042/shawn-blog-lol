@@ -12,6 +12,7 @@
     --main-color: #1b3548;
     --secondary-color: #126dae;
     --best-font:  font-family: "MS Gothic", Tahoma, sans-serif;
+    --span-color: darkgray;
 }
 span{
     color: #2aa198;

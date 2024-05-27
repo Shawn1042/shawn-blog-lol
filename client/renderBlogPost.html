@@ -21,12 +21,151 @@
 
      <section class="outer-blog">
 
-        <div class="inner-blog">
-
+        <div class="blog-inner">
+            <img src="/assets/soothing.jpg" alt="sooting picture" title="soothing picture" id="soothing-pic">
+            <h1>Rendering Dom Nodes without rendering them at all!</h1>
+            
+            <article>
+                <p><strong>Optimizing Website Performance: A Technical Deep Dive</strong></p>
+                
+                <p>In my latest project, I focused on optimizing the performance of a website by refining the HTML, CSS, and JavaScript. Here’s a detailed look at the techniques and code snippets that made the site load faster and run smoother.</p>
+                
+                <br>
+                
+                <p><strong>1. Lazy Loading Images</strong></p>
+                
+                <p>By implementing lazy loading, images are only loaded when they enter the viewport. This reduces the initial load time significantly.</p>
+                
+                <code>
+                document.addEventListener( <br>'DOMContentLoaded', () => {<br>
+                    const imgElements =<br> document. <br>querySelectorAll('img');
+                    imgElements.forEach(img => {<br>
+                        img.loading = 'lazy';<br>
+                    });<br>
+                });
+                </code>
+                
+                <br>
+                
+                <p><strong>2. Deferring Rendering of DOM Nodes</strong></p>
+                
+                <p>To avoid rendering all elements at once, we use the Intersection Observer API to render elements as they come into view. This optimizes the rendering process and improves performance.</p>
+                
+                <code>
+                const observer = new IntersectionObserver((entries) => {<br>
+                    entries.forEach(entry => {<br>
+                        if (entry.isIntersecting) {<br>
+                            const card = entry.target;<br>
+                            card.style.height = ''; // Remove placeholder height<br>
+                            observer.unobserve(card);<br>
+                        }<br>
+                    });<br>
+                }, { rootMargin: '100px' });
+                </code>
+                
+                <br>
+                
+                <p><strong>3. Minifying CSS and JavaScript</strong></p>
+                
+                <p>Minifying CSS and JavaScript files reduces their size, leading to faster load times. This involves removing whitespace, comments, and unnecessary characters.</p>
+                
+                <br>
+                
+                <p><strong>4. Using Efficient CSS Selectors</strong></p>
+                
+                <p>Efficient CSS selectors ensure that styles are applied quickly and do not cause delays in rendering.</p>
+                
+                <br>
+                
+                <p><strong>5. Combining CSS and JavaScript Files</strong></p>
+                
+                <p>Combining multiple CSS and JavaScript files into single files reduces the number of HTTP requests, enhancing load times.</p>
+                
+                <br>
+        
+                <p><strong>6. Dynamic Card Generation</strong></p>
+        
+                <p>To make the site more dynamic and maintainable, I implemented a system to generate cards dynamically using JavaScript. Here is the card data and the function to create and add cards:</p>
+        
+                <code>
+                const cardData = [<br>
+                    {<br>
+                        title: "Shikai!",<br>
+                        description: "Shikai - Watch High Quality Anime Online. You can watch anime online free in HD without Ads. Best place for free find and one-click anime.",<br>
+                        link: "https://shikaithenew.vercel <br>.app/",<br>
+                        imgSrc: "/assets/shikaithenew.jpg_small",<br>
+                        btnText: "watch Shikai!"<br>
+                    },<br>
+                    <br>
+                    {<br>
+                        title: "Shawn's Domain!",<br>
+                        description: "Learn a little more about me! also sorry if this website lags lol",<br>
+                        link: "https://shawnreact.vercel.app/",<br>
+                        imgSrc: "/assets/shawnsdomain.jpg",<br>
+                        btnText: "go to Shawn's Domain!"<br>
+                    },<br>
+                    <br>
+                    {<br>
+                        title: "Path-finding-visualizer",<br>
+                        description: "I built an interactive pathfinding visualizer using vanilla JavaScript.",<br>
+                        link: "https://path-finding-visualizer-theta.vercel.app/",<br>
+                        imgSrc: "/assets/pathfindingvisualizer.jpg",<br>
+                        btnText: "go to PFV project!"<br>
+                    },<br>
+                    <br>
+                    {<br>
+                        title: "Manga Website!",<br>
+                        description: "Free Manga website coming soon :) So in the meantime, go watch anime on Shikai",<br>
+                        link: "https://shikaithenew.vercel.app/",<br>
+                        imgSrc: "/assets/shikaithenew.jpg_small",<br>
+                        btnText: "watch anime on Shikai!"<br>
+                    },<br>
+                    <br>
+                    {<br>
+                        title: "Shikai-mini",<br>
+                        description: "mini version of the original website Shikai! Free anime with no ADs",<br>
+                        link: "https://shikai-mini.vercel.app/",<br>
+                        imgSrc: "/assets/shikai-mini.jpg",<br>
+                        btnText: "watch anime on shikai-mini!"<br>
+                    }<br>
+                ];<br><br>
+        
+                const createCard = ({ title, description, link, imgSrc, btnText }) => {<br>
+                    const card = document.createElement('div');<br>
+                    card.className = 'card';<br>
+                    card.innerHTML = `<br>
+                        <a href="${link}" target="_blank"><br>
+                            <img src="${imgSrc}" alt="${title}"><br>
+                        </a><br>
+                        <div class="card-content"><br>
+                            <h2>${title}</h2><br>
+                            <p>${description}</p><br>
+                            <a href="${link}" class="card-btn">${btnText}</a><br>
+                        </div>`;<br>
+                    return card;<br>
+                };<br><br>
+        
+                const addCards = (data) => {<br>
+                    const boxes = document.getElementById('boxes');<br>
+                    data.forEach(item => {<br>
+                        const card = createCard(item);<br>
+                        card.style.height = '385px'; // Placeholder height<br>
+                        boxes.appendChild(card);<br>
+                        observer.observe(card);<br>
+                    });<br>
+                };<br><br>
+        
+                addCards(cardData);<br>
+                </code>
+        
+                <br>
+        
+                <p>These optimizations, when applied collectively, significantly enhance the performance of a website. The improvements lead to faster load times, smoother interactions, and an overall better user experience.</p>
+            </article>
         </div>
-       
-
      </section>
+
+     <script src="renderBlogPost.js"></script>
     
 </body>
 </html>
