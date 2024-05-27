@@ -28,8 +28,8 @@ const e = document.getElementById("rainBackgroundContainer");
                 {
                     title: "Shikai!",
                     description: "Shikai - Watch High Quality Anime Online. You can watch anime online free in HD without Ads. Best place for free find and one-click anime.",
-                    link: "https://shikaishikai.vercel.app/home",
-                    imgSrc: "/assets/shikaishikai.jpg",
+                    link: "https://shikaithenew.vercel.app/",
+                    imgSrc: "/assets/shikaithenew.jpg_small",
                     btnText: "watch Shikai!"
                 },
                 {
@@ -49,8 +49,8 @@ const e = document.getElementById("rainBackgroundContainer");
                 {
                     title: "Manga Website!",
                     description: "Free Manga website coming soon :) So in the meantime, go watch anime on Shikai",
-                    link: "https://shikaishikai.vercel.app/home",
-                    imgSrc: "/assets/shikaishikai.jpg",
+                    link: "https://shikaithenew.vercel.app/",
+                    imgSrc: "/assets/shikaithenew.jpg_small",
                     btnText: "watch anime on Shikai!"
                 },
                 {
