@@ -1,0 +1,95 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400&family=Press+Start+2P&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+    text-decoration: none;
+}
+
+:root{
+    --main-color: #1b3548;
+    --secondary-color: #126dae;
+    --best-font:  font-family: "MS Gothic", Tahoma, sans-serif;
+}
+span{
+    color: #2aa198;
+}
+
+body {
+    background-color: black;
+    font-family: "Pixel NES";
+    color: white;
+}
+
+/* rain animation */
+
+#rainBackgroundContainer {
+    position: fixed;
+    top: -100px;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 100000;
+    pointer-events: none;
+  }
+  
+  .raindrop {
+    position: absolute;
+    background: linear-gradient(to bottom, rgba(200, 200, 255, 0.7), rgba(200, 200, 255, 0));
+    animation: rainAnimation linear infinite;
+  }
+  
+  @keyframes rainAnimation {
+    to {
+      transform: translateY(100vh);
+    }
+  } 
+
+/* header */
+
+header{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 20px;
+}
+
+.press-start {
+    font-family: "Press Start 2P", system-ui;
+    font-weight: 400;
+    font-style: normal;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+    color: rgb(144, 143, 143);
+    padding: 10px;
+    font-size: 4rem;
+    animation: blink 1s infinite;
+}
+
+hr{
+    width: 100%;
+    border: 2px solid #161719;
+    animation: blink 1s 5;
+}
+
+/* blinking animation */
+@keyframes blink {
+    0% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.5;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+/* responsive design for header on phones */
+@media only screen and (max-width: 650px){
+    .press-start{
+        font-size: 3rem;
+    }
+}
