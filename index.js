@@ -65,7 +65,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // fetch card data from cardData.json
     const fetchCardData = async () => {
         try {
-            const response = await fetch('cardData.json');
+            const response = await fetch('/api/cardData.json');
             if (!response.ok) {
                 throw new Error(`HTTP error! Status: ${response.status}`);
             }
