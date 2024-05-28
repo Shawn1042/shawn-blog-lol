@@ -196,11 +196,9 @@ article br {
 @media only screen and (max-width: 650px){
     .blog-inner{
         width: 100%;
-        margin: 10px;
     }
 
     .blog-inner > h1{
-      
         text-align: center;
     }
     .blog-inner > #soothing-pic{
