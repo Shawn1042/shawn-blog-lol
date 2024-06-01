@@ -1,6 +1,7 @@
 // Rain animation
 const rainBackgroundContainer = document.getElementById("rainBackgroundContainer");
 
+// rain drops 
 for (let i = 0; i < 50; i++) {
     const raindrop = document.createElement("div");
     raindrop.classList.add("raindrop");
@@ -20,8 +21,44 @@ for (let i = 0; i < 50; i++) {
     rainBackgroundContainer.appendChild(raindrop);
 }
 
+// philly info box
+let moods = ["happy", "tired"]
+let moodElement = document.querySelector('#mood')
+let currentTime = new Date().toTimeString().split(' ')[0];
+let morningTime = "08:00:00" // 8am
+let eveningTime = "17:00:00"; //5pm
 
 
+if(currentTime >= morningTime && currentTime <= eveningTime){
+    moodElement.innerHTML = `${moods[0]} <br>`
+}else{
+    moodElement.innerHTML = `${moods[1]} <br>`
+}
+
+// Function to update the time
+const updateTime = () => {
+    let currentTime = new Date().toTimeString().split(' ')[0];
+    console.log(currentTime)
+    let timeInPhiladelphia = document.querySelector('#time');
+    timeInPhiladelphia.innerHTML = `<br><br>${currentTime}`;
+}
+updateTime();
+setInterval(updateTime, 1000);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// card creation
 document.addEventListener('DOMContentLoaded', () => {
     // Function to create each card element
     const createCard = ({ title, description, link, imgSrc, btnText }) => {
@@ -79,3 +116,6 @@ document.addEventListener('DOMContentLoaded', () => {
     // Fetch card data and add to the page
     fetchCardData();
 });
+
+
+
