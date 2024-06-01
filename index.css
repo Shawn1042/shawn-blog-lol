@@ -111,6 +111,69 @@ hr{
     background-color: black;
 }
 
+/* philly box info */
+
+#philly-info-box{
+    transition: .5s;
+    border: 1px solid yellow;
+    position: absolute;
+    right: 40px;
+    top: 35%;
+    padding: 15px;
+    border-radius: 5px;
+}
+
+#philly-info-box > .top-of-philly-box{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    color:yellow;
+}
+
+#philly-info-box > .top-of-philly-box > img{
+    transition: .5s;
+    margin-left: 10px;
+    margin-right: 10px;
+    height: 60px;
+}
+
+#philly-info-box > .top-of-philly-box > img:hover{
+    transform: scale(1.7);
+}
+
+#philly-info-box > .bottom-philly-box {
+    text-align: center;
+    margin-top: 5px;
+    padding: 5px;
+}
+
+#philly-info-box > .bottom-philly-box > p{
+    font-family: "MS Gothic", Tahoma, sans-serif;
+    color: white;
+}
+
+#philly-info-box > .bottom-philly-box > p > span{
+    color: yellow;
+}
+
+@media only screen and (max-width: 1200px){
+    #philly-info-box > .top-of-philly-box{
+        display: none;
+    }
+
+    #philly-info-box{
+        right: 5px;
+        top: 7px;
+        width: 25%;
+    }
+}
+
+@media only screen and (max-width: 650px){
+    #philly-info-box{
+        display: none;
+    }
+}
+
 /* blog section */
 
 #blog{
