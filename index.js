@@ -38,7 +38,6 @@ if(currentTime >= morningTime && currentTime <= eveningTime){
 // Function to update the time
 const updateTime = () => {
     let currentTime = new Date().toTimeString().split(' ')[0];
-    console.log(currentTime)
     let timeInPhiladelphia = document.querySelector('#time');
     timeInPhiladelphia.innerHTML = `<br><br>${currentTime}`;
 }
