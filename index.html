@@ -13,12 +13,11 @@
     <link rel="stylesheet" href="index.css">
 </head>
 <body>
-    <audio autoplay loop id="mars">
-        <source src="mixkit-bad-weather-heavy-rain-and-thunder-1261.wav">
-    </audio>
+   
 
     <!-- rain animation -->
     <div id="rainBackgroundContainer"></div>
+    <div class="soundStatus"></div>
 
     <!-- header -->
     <header>
@@ -29,16 +28,10 @@
     <!-- Philly Info -->
 
     <div id="philly-info-box">
-        <div class="top-of-philly-box">
-            <p>+</p>
-            <img src="/assets/phillyphilly-removebg-preview.png" alt="">
-            <p>X</p>
-        </div>
-
         <div class="bottom-philly-box">
            <p> <span id="phase"></span></p>
            <p>mood: <span id="mood"></span></p>
-           <p>Current Time in Philadelphia: <span id="time"></span>
+           <p>Time in Philadelphia: <span id="time"></span>
         </div>
     </div>
 
@@ -89,6 +82,6 @@
         <p>Please be kind everyday!</p>
     </footer>
 
-    <script src="index.js"></script>
+    <script src="index.js" defer></script>
 </body>
 </html>

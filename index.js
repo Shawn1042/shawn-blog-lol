@@ -46,17 +46,6 @@ setInterval(updateTime, 1000);
 
 
 
-
-
-
-
-
-
-
-
-
-
-
 // card creation
 document.addEventListener('DOMContentLoaded', () => {
     // Function to create each card element
@@ -117,4 +106,80 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 
+// // play audio
+// // audio
+// let CHAINSAW_MAN_SONG = "Chainsaw Man Opening - KICK BACK_tv.mp3";
+// let RENT_A_GIRLFRIEND_SONG = "rentagirlfriendOP.mp3";
+
+// let arrayOfSongs = [CHAINSAW_MAN_SONG, RENT_A_GIRLFRIEND_SONG];
+
+// let playRandomSong = () => {
+//     try {
+
+//         let soundTextUpdate = document.querySelector(".soundStatus")
+//         let randomIndex = Math.floor(Math.random() * arrayOfSongs.length);
+//         let randomSong = arrayOfSongs[randomIndex];
+//         let soundIsPlaying;
+        
+//         let audio = new Audio(randomSong);
+//         audio.volume = 0.5; // Set the volume to 50%
+        
+//         audio.play().catch(() => {
+//             document.addEventListener("click", () => audio.play(), { once: true });
+//         });
+    
+//         // When the song ends, play another random song
+//         audio.addEventListener('ended', playRandomSong);
+        
+        
+//         if(!audio.play()){
+//             console.log("error")
+//             soundTextUpdate.textContent = "SOUND OFF. an error occured, sorry"
+//             soundTextUpdate.style.color = "red"
+//             soundTextUpdate.style.fontSize = "16px" 
+//             soundIsPlaying = false
+//         }else{
+//             console.log("playing")
+//             soundTextUpdate.textContent = "SOUND ON"
+//             soundTextUpdate.style.color = "lime"
+//             soundTextUpdate.style.fontSize = "16px" 
+//             soundIsPlaying = true
+
+//         }
+//     } catch(error) {
+//         console.log(error);
+
+//     }
+// };
+
+try{
+    let soundTextUpdate = document.querySelector(".soundStatus")
+    let song  = "indoor-hard-rain-sound-190883.mp3"
+    let audio = new Audio(song);
+        audio.volume = 0.4; 
+        
+        audio.play().catch(() => {
+            document.addEventListener("click", () => audio.play(), { once: true });
+        });
+
+        
+        if(!audio.play()){
+            console.log("error")
+            soundTextUpdate.textContent = "SOUND OFF"
+            soundTextUpdate.style.color = "red"
+            soundTextUpdate.style.fontSize = "16px" 
+            soundTextUpdate.style.marginTop = "10px"
+            soundIsPlaying = false
+        }else{
+            console.log("playing")
+            soundTextUpdate.textContent = "SOUND ON"
+            soundTextUpdate.style.color = "lime"
+            soundTextUpdate.style.fontSize = "16px" 
+            soundIsPlaying = true
+
+        }
+
+}catch(err){
+    console.log("Errore", err)
+}
 

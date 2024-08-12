@@ -115,7 +115,7 @@ hr{
 
 #philly-info-box{
     transition: .5s;
-    border: 1px solid yellow;
+    border: 1px solid rgb(62, 62, 61);
     position: absolute;
     right: 40px;
     top: 35%;
@@ -169,6 +169,9 @@ hr{
 }
 
 @media only screen and (max-width: 650px){
+    #blog-posts > h1, p{ 
+        text-align: center;
+    }
     #philly-info-box{
         display: none;
     }
@@ -287,6 +290,9 @@ hr{
     width: 60%;
     text-align: center;
     margin: auto;
+}
+#blog-posts {
+    margin-top: 20px;
 }
 
 @media only screen and (max-width: 650px){

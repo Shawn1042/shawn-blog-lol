@@ -28,10 +28,10 @@
         "btnText": "watch anime on Shikai!"
     },
     {
-        "title": "Shikai-mini",
-        "description": "mini version of the original website Shikai! Free anime with no ADs",
-        "link": "https://shikai-mini.vercel.app/",
+        "title": "Beta Shikai!",
+        "description": "enjoy my anime website that now includes making accounts!",
+        "link": "https://beta-shikai.vercel.app/",
         "imgSrc": "/assets/shikai-mini.jpg",
-        "btnText": "watch anime on shikai-mini!"
+        "btnText": "watch anime on beta shikai"
     }
 ]
